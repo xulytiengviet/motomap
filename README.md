@@ -6,6 +6,8 @@
 
 > **语言 / Language:** 中文 · [English](README.en.md)
 
+> 🇻🇳 **Website tiếng Việt MotoMap:** [Xem bản giới thiệu và mô phỏng tương tác](https://xulytiengviet.github.io/motomap/) · [Mã nguồn trang](index.html) · [Hướng dẫn triển khai](docs/WEBSITE_VI.md).
+
 # MOTO GPS · Waveshare Edition
 
 [Glimpse 官网](https://maler.top/) · [2026-09-16 近期更新](docs/UPDATES_2026-09-16.md) · [Web 调试入口](https://maler.top/moto-gps/ride.html)
