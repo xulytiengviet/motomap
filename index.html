@@ -113,7 +113,7 @@
               </div>
               <div class="screen-layer" data-screen="speed"><div class="speed-ring"></div><div class="screen-label">TỐC ĐỘ HIỆN TẠI</div><div class="speed-big">42</div><div class="speed-unit">km/h</div><div class="screen-foot"><i></i>DỮ LIỆU MẪU</div></div>
               <div class="screen-layer" data-screen="heading"><div class="screen-label">HƯỚNG DI CHUYỂN</div><div class="compass-arrow">↑</div><div class="compass-dir">BẮC · 0°</div><div class="screen-foot"><i></i>MINH HỌA HƯỚNG ĐI</div></div>
-              <div class="screen-layer" data-screen="music"><div class="screen-label">ÂM NHẠC</div><div class="music-art">♫</div><div class="music-track">Chẳng Cần Diễm Son</div><div class="music-artist">Nghe qua Zing MP3</div><div class="music-controls" aria-hidden="true">◀◀　♫　▶▶</div><div class="screen-foot"><i></i>GIAO DIỆN MINH HỌA</div></div>
+              <div class="screen-layer" data-screen="music"><div class="screen-label">ÂM NHẠC</div><div class="music-art">♫</div><div class="music-track">Chẳng cần diễm son</div><div class="music-artist">Nghe qua Zing MP3</div><div class="music-controls" aria-hidden="true">◀◀　♫　▶▶</div><div class="screen-foot"><i></i>GIAO DIỆN MINH HỌA</div></div>
             </div></div>
           </div>
           <div class="circle-label label-bottom"><strong>1,75″ AMOLED</strong><br>466 × 466 pixel · mẫu Waveshare</div>
@@ -151,7 +151,7 @@
               <p class="showcase-note" id="navMotionState" role="status" aria-live="polite">Chọn ↱ Dẫn đường để bắt đầu chuyển động lộ trình mẫu.</p>
             </div>
             <div class="music-panel" id="musicPanel" hidden>
-              <div class="music-panel-heading"><span class="symbol" aria-hidden="true">♫</span><div><strong>Chẳng Cần Diễm Son</strong><span>Nghe qua trình phát Zing MP3 · Không lưu âm thanh trên MotoMap</span></div></div>
+              <div class="music-panel-heading"><span class="symbol" aria-hidden="true">♫</span><div><strong>Chẳng cần diễm son</strong><span>Nghe qua trình phát Zing MP3 · Không lưu âm thanh trên MotoMap</span></div></div>
               <div class="buttons">
                 <button class="btn btn-primary" id="loadZingPlayer" type="button" aria-controls="zingEmbedContainer">♫ Mở trình phát bài hát</button>
                 <a class="btn" href="https://zingmp3.vn/bai-hat/Chang-Can-Diem-Son/65A3tmuG8W7c.html" target="_blank" rel="noopener noreferrer">Nghe trực tiếp trên Zing MP3 ↗</a>
@@ -332,7 +332,7 @@
       nav:["Nhìn một lần, biết đường rẽ tiếp theo.","Màn hình hiển thị đường đi gần xe, quãng đường đến chỗ rẽ và tên đường minh họa. Định vị thực tế do ứng dụng điện thoại xử lý.","Dẫn đường"],
       speed:["Tốc độ, rõ ràng trong tầm mắt.","Bố cục chữ lớn giúp xem tốc độ từ dữ liệu điện thoại trong một thao tác. Giá trị 42 km/h trên bản demo là số minh họa.","Tốc độ"],
       heading:["Giữ phương hướng cho mỗi chuyến đi.","Xem hướng đang di chuyển. Khi đứng yên, khả năng xác định Bắc tuyệt đối phụ thuộc cảm biến, hiệu chuẩn và phiên bản phần cứng.","Hướng đi"],
-      music:["Chẳng Cần Diễm Son — Zing MP3.","Chọn Mở trình phát bên dưới để nghe bài hát qua Zing MP3 (nếu trình duyệt hỗ trợ). Màn hình tròn chỉ là minh họa, không điều khiển bài hát thực tế.","Âm nhạc"]
+      music:["Chẳng cần diễm son — Zing MP3.","Chọn Mở trình phát bên dưới để nghe bài hát qua Zing MP3 (nếu trình duyệt hỗ trợ). Màn hình tròn chỉ là minh họa, không điều khiển bài hát thực tế.","Âm nhạc"]
     };
     var routeSamples=[
       {distance:"250",street:"Rẽ phải · Lê Duẩn"},
@@ -430,7 +430,7 @@
       var container=document.getElementById("zingEmbedContainer");
       if(!container.querySelector("iframe")){
         var player=document.createElement("iframe");
-        player.title="Trình phát Zing MP3 – Chẳng Cần Diễm Son";
+        player.title="Trình phát Zing MP3 – Chẳng cần diễm son";
         player.loading="lazy";
         player.referrerPolicy="strict-origin-when-cross-origin";
         player.allow="autoplay; encrypted-media; picture-in-picture";
