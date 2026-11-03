@@ -29,6 +29,13 @@ Nếu tổ chức/tài khoản chặn GitHub Actions hoặc Pages chưa được
 
 **Toàn bộ chỉ dẫn, số liệu tốc độ/tuyến đường và đồ họa đường phố trên website là dữ liệu giả lập.** Trang web không có khả năng định vị thực, lập lộ trình, tải bản đồ offline, kết nối BLE hoặc điều khiển ứng dụng nhạc. Các chức năng đó thuộc ứng dụng/firmware riêng và có thể vẫn đang được phát triển, kiểm thử, cấu hình.
 
+## Cập nhật giao diện tương tác (03/11/2026)
+
+- Bổ sung **Lắp ráp** tại #lap-rap với 6 bước từ chọn bo Waveshare 1.75C, công cụ ESP-IDF, sao lưu Flash, nạp firmware, ghép đôi điện thoại đến kiểm tra định vị. Mục này tóm tắt [hướng dẫn Waveshare DIY](WAVESHARE_DIY_GUIDE.md), không thay thế chỉ dẫn an toàn và các thông số kiểm chứng trong tài liệu gốc.
+- Khi chọn **↱ Dẫn đường**, màn hình tròn minh họa tuyến đường có chuyển động CSS và khoảng cách được cập nhật định kỳ bằng JavaScript. Có nút bắt đầu/dừng; chuyển chế độ sẽ dừng mô phỏng. Tôn trọng thiết lập giảm chuyển động của hệ điều hành.
+- Mục **Âm nhạc** hiển thị bài **Chẳng cần diễm son** và nút mở khung Zing MP3 tại liên kết nhúng chính thức dự kiến: https://zingmp3.vn/embed/song/65A3tmuG8W7c ; khung chỉ được tạo khi người dùng bấm mở, không tự phát. Có liên kết nghe trực tiếp: https://zingmp3.vn/bai-hat/Chang-Can-Diem-Son/65A3tmuG8W7c.html. Khả năng tải và phát phụ thuộc Zing MP3, chính sách nhúng và trình duyệt; không đưa bản ghi âm vào repository.
+- Footer hiển thị đúng nội dung: **Long Ngo phát triển, Dựa trên dự án Glimpse. © 2026 MotoMap**. Nghĩa vụ giấy phép, ghi nhận công lao và hạn chế sử dụng vẫn được duy trì trong LICENSE.md, NOTICE, LICENSES và phần FAQ.
+
 ## Giới hạn kỹ thuật và an toàn
 
 - Phần cứng tham khảo hiện tại là Waveshare ESP32-S3-Touch-AMOLED-1.75C, màn hình 1,75 inch/466×466.
