@@ -1,0 +1,60 @@
+name: Deploy MotoMap Vietnamese website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - assets/brand/moto-gps-cover.png
+      - assets/brand/moto-gps-app-icon.svg
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: motomap-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate standalone HTML and JavaScript
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const html = fs.readFileSync('index.html','utf8');
+          const match = html.match(/<script>([\s\S]*?)<\/script>/i);
+          if (!match) throw new Error('Missing inline JavaScript');
+          new Function(match[1]);
+          for(const marker of ['lang="vi"','id="mo-phong"','id="hoi-dap"','id="demoScreen"','id="faqSearch"']) {
+            if(!html.includes(marker)) throw new Error('Missing required marker: '+marker);
+          }
+          console.log('MotoMap HTML/JS syntax and section markers: OK');
+          NODE
+      - name: Prepare minimal site artifact
+        shell: bash
+        run: |
+          mkdir -p _site/assets/brand
+          cp index.html _site/index.html
+          cp assets/brand/moto-gps-cover.png _site/assets/brand/
+          cp assets/brand/moto-gps-app-icon.svg _site/assets/brand/
+          touch _site/.nojekyll
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
