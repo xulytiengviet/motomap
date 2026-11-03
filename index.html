@@ -34,6 +34,42 @@
     @media(max-width:960px){.nav{display:none}.hero-grid,.phone-grid,.map-grid,.hardware{grid-template-columns:1fr}.hero{min-height:0}.hero-grid{gap:70px;padding:75px 0 85px}.hero-art{min-height:470px}.hero-desc{max-width:750px}.phone-grid{gap:50px}.phone-grid>div:first-child{order:2}.map-grid{gap:40px}.showcase{grid-template-columns:1fr}.showcase-preview{order:-1}.section{padding:80px 0}.oss-box{align-items:start;flex-direction:column}.features-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.container{width:min(100% - 32px,1180px)}.header-inner{height:64px}.nav-actions .btn{font-size:12px;padding:8px 10px}.header-inner .brand{font-size:18px}.hero-grid{padding:65px 0 40px;gap:35px}h1{font-size:clamp(47px,12vw,72px)}.hero-art{min-height:350px}.device{--size:min(305px,78vw)}.orbit{width:360px;max-width:100%}.circle-label{font-size:9px;padding:6px}.label-top{right:0;top:0}.label-bottom{left:0;bottom:3%}.section{padding:65px 0}.fact-grid{grid-template-columns:repeat(2,1fr)}.fact{padding:20px 12px;border-bottom:1px solid #29362c}.fact:first-child{padding-left:12px}.fact:nth-child(2){border-right:0}.fact:nth-child(n+3){border-bottom:0}.fact strong{font-size:23px}.showcase{padding:20px}.showcase-preview{padding:20px 0}.showcase-preview .device{--size:min(298px,78vw)}.section-top{display:block}.steps-grid,.features-grid{grid-template-columns:1fr}.step{min-height:0;padding:23px}.flow-explainer{align-items:start;flex-direction:column}.phone{transform:rotate(-2deg)}.hardware-kv{grid-template-columns:1fr 1fr}.buttons .btn{flex:1}.map-chip{font-size:10px;left:14px;bottom:15px}.oss-box{gap:18px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* Motion demo: only active after a deliberate user gesture. */
+    .screen-layer.is-routing .route-svg{animation:route-drift 5s ease-in-out infinite alternate;transform-origin:50% 55%}
+    .screen-layer.is-routing .travel-line{stroke-dasharray:22 9;animation:route-pulse 1.1s linear infinite}
+    .screen-layer.is-routing .rider-arrow{animation:rider-bob .8s ease-in-out infinite alternate}
+    @keyframes route-drift{0%{transform:translate(0,11px) scale(1.02)}100%{transform:translate(-7px,-14px) scale(1.10)}}
+    @keyframes route-pulse{to{stroke-dashoffset:-62}}
+    @keyframes rider-bob{to{transform:translateY(-3px)}}
+    .demo-actions{display:flex;align-items:flex-start;gap:13px;flex-wrap:wrap;border-top:1px solid #3d4d3d;padding-top:16px}
+    .demo-actions .showcase-note{margin:8px 0;flex:1;min-width:170px}
+    .music-panel{margin-top:17px;padding:18px;border:1px solid #50694b;border-radius:15px;background:#182419}
+    .music-panel[hidden],.demo-actions[hidden],.zing-embed[hidden]{display:none!important}
+    .music-panel-heading{display:flex;align-items:center;gap:13px}
+    .music-panel-heading>.symbol{width:42px;height:42px;display:grid;place-items:center;background:#324a2c;color:var(--lime);border-radius:12px;font-size:24px}
+    .music-panel-heading strong,.music-panel-heading span{display:block}
+    .music-panel-heading strong{font-size:18px}
+    .music-panel-heading div>span{color:#a9bba7;font-size:12px}
+    .music-panel .buttons{margin-top:14px}
+    .zing-embed{margin-top:17px;border:1px solid #50654b;border-radius:14px;overflow:hidden;background:#111}
+    .zing-embed iframe{display:block;border:0;width:100%;height:240px}
+    .assembly-section{background:radial-gradient(ellipse at 15% 10%,#1d3021,transparent 45%),#0d120f;border-top:1px solid #263628}
+    .assembly-intro{padding:23px 25px;margin-bottom:23px;background:#1a271c;border:1px solid #3c573a;border-radius:17px;display:flex;align-items:center;gap:25px}
+    .assembly-intro p{margin:0;color:#bed0bc;font-size:14px}
+    .assembly-intro .tag{white-space:nowrap}
+    .assembly-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .assembly-card{display:flex;flex-direction:column;min-height:270px;padding:24px;background:#18221b;border:1px solid #3c4d3d;border-radius:19px}
+    .assembly-number{color:var(--lime);font:800 12px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.11em}
+    .assembly-card h3{margin:16px 0 10px;font-size:19px}
+    .assembly-card p{margin-bottom:17px;font-size:13px;color:#b4c2b5;flex:1}
+    .assembly-card a{font-size:12px;color:var(--lime);font-weight:800}
+    .assembly-card a:hover{text-decoration:underline}
+    .assembly-warning{margin-top:21px;padding:19px 22px;background:#28241c;border:1px solid #776442;border-radius:13px;color:#e8cfae;font-size:13px}
+    .assembly-warning a{text-decoration:underline;color:#ffdda7}
+    @media(max-width:960px){.assembly-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.assembly-intro{display:block}.assembly-intro p{margin-top:14px}}
+    @media(max-width:640px){.assembly-grid{grid-template-columns:1fr}.assembly-card{min-height:0}.demo-actions{display:block}.demo-actions .btn{width:100%}.zing-embed iframe{height:260px}}
+    @media(prefers-reduced-motion:reduce){.screen-layer.is-routing .route-svg,.screen-layer.is-routing .travel-line,.screen-layer.is-routing .rider-arrow{animation:none!important}}
   </style>
 </head>
 <body>
@@ -42,7 +78,7 @@
     <div class="container header-inner">
       <a class="brand" href="#dau" aria-label="MotoMap – Trang chủ"><span class="brand-mark">↗</span><span>MOTO<strong>MAP</strong></span></a>
       <nav class="nav" aria-label="Điều hướng chính">
-        <a href="#mo-phong">Mô phỏng</a><a href="#cach-dung">Cách dùng</a><a href="#ban-do">Bản đồ</a><a href="#phan-cung">Phần cứng</a><a href="#hoi-dap">Hỏi đáp</a>
+        <a href="#mo-phong">Mô phỏng</a><a href="#cach-dung">Cách dùng</a><a href="#ban-do">Bản đồ</a><a href="#phan-cung">Phần cứng</a><a href="#lap-rap">Lắp ráp</a><a href="#hoi-dap">Hỏi đáp</a>
       </nav>
       <div class="nav-actions"><a class="btn" href="https://github.com/xulytiengviet/motomap" target="_blank" rel="noopener noreferrer" aria-label="Xem mã nguồn trên GitHub">GitHub ↗</a></div>
     </div>
@@ -67,8 +103,8 @@
                 <svg class="route-svg" viewBox="0 0 340 340" aria-hidden="true">
                   <g stroke="#37413e" stroke-width="4" stroke-linecap="round" fill="none" opacity=".75"><path d="M20 94 H318M23 175 H319M67 10 V320M258 12 V330M14 260 H320M148 0 V320M5 44 H312"/><path d="M14 300 304 10M32 10 314 300" stroke-width="2"/></g>
                   <g stroke="#5b655e" stroke-width="1" fill="#222a25" opacity=".9"><rect x="83" y="65" width="45" height="43" rx="5"/><rect x="273" y="195" width="39" height="48" rx="4"/><rect x="173" y="102" width="56" height="42" rx="5"/></g>
-                  <path d="M170 280V177Q170 153 193 153H249Q267 153 267 131V70" stroke="#000" stroke-width="18" stroke-linecap="round" fill="none"/>
-                  <path d="M170 280V177Q170 153 193 153H249Q267 153 267 131V70" stroke="#eaf7e9" stroke-width="11" stroke-linecap="round" fill="none"/>
+                  <path class="travel-shadow" d="M170 280V177Q170 153 193 153H249Q267 153 267 131V70" stroke="#000" stroke-width="18" stroke-linecap="round" fill="none"/>
+                  <path class="travel-line" d="M170 280V177Q170 153 193 153H249Q267 153 267 131V70" stroke="#eaf7e9" stroke-width="11" stroke-linecap="round" fill="none"/>
                   <circle cx="267" cy="70" r="8" fill="#c7f87b"/><circle cx="170" cy="195" r="8" fill="#c7f87b" stroke="#152218" stroke-width="4"/>
                 </svg>
                 <div class="screen-label">MOTOMAP · DẪN ĐƯỜNG</div>
@@ -77,7 +113,7 @@
               </div>
               <div class="screen-layer" data-screen="speed"><div class="speed-ring"></div><div class="screen-label">TỐC ĐỘ HIỆN TẠI</div><div class="speed-big">42</div><div class="speed-unit">km/h</div><div class="screen-foot"><i></i>DỮ LIỆU MẪU</div></div>
               <div class="screen-layer" data-screen="heading"><div class="screen-label">HƯỚNG DI CHUYỂN</div><div class="compass-arrow">↑</div><div class="compass-dir">BẮC · 0°</div><div class="screen-foot"><i></i>MINH HỌA HƯỚNG ĐI</div></div>
-              <div class="screen-layer" data-screen="music"><div class="screen-label">ÂM NHẠC</div><div class="music-art">♫</div><div class="music-track">Chuyến đi bình yên</div><div class="music-artist">Nhạc mẫu · MotoMap</div><div class="music-controls">◀◀　Ⅱ　▶▶</div><div class="screen-foot"><i></i>GIAO DIỆN MINH HỌA</div></div>
+              <div class="screen-layer" data-screen="music"><div class="screen-label">ÂM NHẠC</div><div class="music-art">♫</div><div class="music-track">Chẳng Cần Diễm Son</div><div class="music-artist">Nghe qua Zing MP3</div><div class="music-controls" aria-hidden="true">◀◀　♫　▶▶</div><div class="screen-foot"><i></i>GIAO DIỆN MINH HỌA</div></div>
             </div></div>
           </div>
           <div class="circle-label label-bottom"><strong>1,75″ AMOLED</strong><br>466 × 466 pixel · mẫu Waveshare</div>
@@ -96,7 +132,7 @@
       <div class="container">
         <div class="section-top">
           <div><div class="eyebrow">01 / Trải nghiệm thiết bị</div><h2>Bốn góc nhìn.<br><span class="accent">Một màn hình tròn.</span></h2></div>
-          <p class="muted">Chạm vào các chế độ để xem giao diện dự kiến. Đây là bản minh họa tương tác trên web, không đo GPS, không phát âm thanh hay điều khiển nhạc thật.</p>
+          <p class="muted">Chạm vào các chế độ để xem giao diện dự kiến. Đây là bản minh họa tương tác trên web: tuyến đường chuyển động giả lập, âm nhạc được mở qua trình phát chính thức, không đo GPS hay điều khiển thiết bị thật.</p>
         </div>
         <div class="showcase">
           <div class="showcase-info">
@@ -110,6 +146,19 @@
               <button type="button" class="mode-button" data-mode="music" aria-pressed="false"><span>♫</span>Âm nhạc</button>
             </div>
             <p class="showcase-note">Mẹo: nhấn phím mũi tên trái/phải khi một nút chế độ đang được chọn để chuyển màn hình.</p>
+            <div class="demo-actions" id="navActions">
+              <button type="button" class="btn btn-primary" id="navToggle" aria-controls="demoScreen">▶ Bắt đầu mô phỏng dẫn đường</button>
+              <p class="showcase-note" id="navMotionState" role="status" aria-live="polite">Chọn ↱ Dẫn đường để bắt đầu chuyển động lộ trình mẫu.</p>
+            </div>
+            <div class="music-panel" id="musicPanel" hidden>
+              <div class="music-panel-heading"><span class="symbol" aria-hidden="true">♫</span><div><strong>Chẳng Cần Diễm Son</strong><span>Nghe qua trình phát Zing MP3 · Không lưu âm thanh trên MotoMap</span></div></div>
+              <div class="buttons">
+                <button class="btn btn-primary" id="loadZingPlayer" type="button" aria-controls="zingEmbedContainer">♫ Mở trình phát bài hát</button>
+                <a class="btn" href="https://zingmp3.vn/bai-hat/Chang-Can-Diem-Son/65A3tmuG8W7c.html" target="_blank" rel="noopener noreferrer">Nghe trực tiếp trên Zing MP3 ↗</a>
+              </div>
+              <div id="zingEmbedContainer" class="zing-embed" hidden></div>
+              <p class="showcase-note" id="musicStatus" role="status">Nhạc chỉ bắt đầu khi bạn chủ động bấm phát trên Zing MP3. Nếu website không cho phép nhúng, mở liên kết Zing MP3 phía trên.</p>
+            </div>
           </div>
           <div class="showcase-preview">
             <div class="device" id="demoDevice" role="img" aria-label="Màn hình tròn đang hiển thị chế độ dẫn đường">
@@ -223,15 +272,37 @@
         </div>
       </div>
     </section>
+    <section class="section assembly-section" id="lap-rap">
+      <div class="container">
+        <div class="eyebrow">07 / Tự lắp ráp thiết bị</div>
+        <div class="section-top">
+          <div><h2>Từ linh kiện<br><span class="accent">đến màn hình trên xe.</span></h2><p class="lead subhead">Hướng dẫn Việt hóa quy trình lắp ráp, nạp firmware và kết nối MotoMap theo tài liệu DIY Waveshare trong repository.</p></div>
+          <a class="btn" href="https://github.com/xulytiengviet/motomap/blob/main/docs/WAVESHARE_DIY_GUIDE.md" target="_blank" rel="noopener noreferrer">Mở tài liệu DIY đầy đủ ↗</a>
+        </div>
+        <div class="assembly-intro">
+          <span class="tag"><span class="pulse" aria-hidden="true"></span> MẪU WAVESHARE 1.75C</span>
+          <p>Không phải bộ kit có sẵn để lắp ngay. Cần mua đúng phiên bản bo mạch, tự biên dịch/nạp firmware và cài ứng dụng. Luôn chạy thử trên bàn trước khi gắn lên xe.</p>
+        </div>
+        <div class="assembly-grid">
+          <article class="assembly-card"><span class="assembly-number">01 / CHỌN THIẾT BỊ</span><h3>Chuẩn bị phần cứng</h3><p>01 bo <strong>ESP32-S3-Touch-AMOLED-1.75C</strong>, 01 cáp USB-C truyền dữ liệu, máy tính và điện thoại. Kiểm tra cấu hình dự án yêu cầu Flash 32 MB, PSRAM 8 MB; pin và giá gắn xe là tùy chọn cần kiểm chứng.</p><a href="https://www.waveshare.com/esp32-s3-touch-amoled-1.75c.htm" target="_blank" rel="noopener noreferrer">Xem đúng mẫu Waveshare ↗</a></article>
+          <article class="assembly-card"><span class="assembly-number">02 / PHẦN MỀM</span><h3>Thiết lập bộ công cụ</h3><p>Tải mã nguồn với submodule. Dùng <strong>ESP-IDF v5.5.5</strong> để biên dịch firmware. Với iPhone, chuẩn bị Xcode và tài khoản Apple để ký ứng dụng; Windows có lựa chọn tự ký IPA theo tài liệu.</p><a href="https://github.com/xulytiengviet/motomap/blob/main/docs/IOS_SIDELOAD.md" target="_blank" rel="noopener noreferrer">Lựa chọn cài iPhone ↗</a></article>
+          <article class="assembly-card"><span class="assembly-number">03 / AN TOÀN DỮ LIỆU</span><h3>Sao lưu firmware gốc</h3><p>Cắm USB, kiểm tra đúng chip, dung lượng Flash, Secure Boot và Flash Encryption. <strong>Đọc và lưu bản sao toàn bộ Flash trước khi ghi đè</strong>; không công khai file sao lưu vì có thể chứa thông tin thiết bị.</p><a href="https://github.com/xulytiengviet/motomap/blob/main/docs/WAVESHARE_DIY_GUIDE.md" target="_blank" rel="noopener noreferrer">Xem lệnh sao lưu chuẩn ↗</a></article>
+          <article class="assembly-card"><span class="assembly-number">04 / FIRMWARE</span><h3>Biên dịch và nạp màn hình</h3><p>Dùng target <strong>esp32s3</strong>, thực hiện build, rồi flash bằng ESP-IDF với cổng serial đúng. Sau khi ghi thành công, thiết bị hiển thị logo và trạng thái chờ kết nối điện thoại.</p><a href="https://github.com/xulytiengviet/motomap/tree/main/platforms/esp32" target="_blank" rel="noopener noreferrer">Mã nguồn ESP32-S3 ↗</a></article>
+          <article class="assembly-card"><span class="assembly-number">05 / ỨNG DỤNG</span><h3>Cài và ghép đôi điện thoại</h3><p>Trên iPhone, tự biên dịch/ký ứng dụng bằng Xcode, cấp quyền Bluetooth và vị trí rồi ghép đôi với thiết bị quảng bá <strong>MOTO GPS</strong>. Có mã nguồn Android, nhưng cần tự build và kiểm thử tương thích.</p><a href="https://github.com/xulytiengviet/motomap/tree/main/platforms/android" target="_blank" rel="noopener noreferrer">Xem ứng dụng Android ↗</a></article>
+          <article class="assembly-card"><span class="assembly-number">06 / THỬ NGHIỆM</span><h3>Thử dẫn đường trước khi gắn xe</h3><p>Trong ứng dụng chọn <strong>“Diễn tập / Demo navigation”</strong> theo phiên bản đang dùng, kiểm tra đường di chuyển, đổi trang và BLE. Với vị trí thật cần thiết lập khóa Web Service và gateway HTTPS riêng.</p><a href="https://github.com/xulytiengviet/motomap/blob/main/docs/GATEWAY_SETUP.md" target="_blank" rel="noopener noreferrer">Cấu hình gateway điều hướng ↗</a></article>
+        </div>
+        <div class="assembly-warning"><strong>Quan trọng:</strong> Không nạp firmware nếu chip/Flash hoặc trạng thái bảo mật khác hướng dẫn. Không lắp pin chưa rõ cực tính hay dùng giá đỡ chưa thử tải/rung nước. Khi chạy xe, chỉ quan sát chỉ dẫn và luôn tuân thủ biển báo thực tế. <a href="https://github.com/xulytiengviet/motomap/blob/main/docs/WAVESHARE_DIY_GUIDE.md" target="_blank" rel="noopener noreferrer">Đọc toàn bộ hướng dẫn gốc trước khi bắt đầu ↗</a></div>
+      </div>
+    </section>
     <section class="section opensource" id="ma-nguon">
       <div class="container oss-box">
-        <div><div class="eyebrow">07 / Open source</div><h2>Từ ý tưởng<br>đến bản tự chế.</h2><p>Tham khảo firmware, ứng dụng iOS/Android, lõi điều hướng, thiết kế điện tử và tài liệu hướng dẫn ngay trong GitHub. Bản Việt hóa website được bổ sung như lớp giới thiệu riêng, giữ nguyên mã nguồn và các thông báo giấy phép hiện có.</p><div class="repo-name">github.com/xulytiengviet/motomap</div></div>
+        <div><div class="eyebrow">08 / Open source</div><h2>Từ ý tưởng<br>đến bản tự chế.</h2><p>Tham khảo firmware, ứng dụng iOS/Android, lõi điều hướng, thiết kế điện tử và tài liệu hướng dẫn ngay trong GitHub. Bản Việt hóa website được bổ sung như lớp giới thiệu riêng, giữ nguyên mã nguồn và các thông báo giấy phép hiện có.</p><div class="repo-name">github.com/xulytiengviet/motomap</div></div>
         <div class="buttons" style="min-width:225px"><a class="btn btn-primary" href="https://github.com/xulytiengviet/motomap" target="_blank" rel="noopener noreferrer">Khám phá repository ↗</a><a class="btn" href="https://github.com/xulytiengviet/motomap/issues" target="_blank" rel="noopener noreferrer">Góp ý / Báo lỗi ↗</a></div>
       </div>
     </section>
     <section class="section" id="hoi-dap">
       <div class="container">
-        <div class="eyebrow">08 / Câu hỏi thường gặp</div><h2>Những điều cần biết<br><span class="accent">trước khi bắt đầu.</span></h2>
+        <div class="eyebrow">09 / Câu hỏi thường gặp</div><h2>Những điều cần biết<br><span class="accent">trước khi bắt đầu.</span></h2>
         <label class="faq-search"><span aria-hidden="true">⌕</span><input id="faqSearch" type="search" autocomplete="off" placeholder="Tìm theo từ khóa: Bluetooth, offline, Android..." aria-label="Tìm kiếm câu hỏi thường gặp"></label>
         <div class="faq-stack" id="faqList">
           <details><summary>Đây là thiết bị thương mại có thể mua ngay không?</summary><p>Chưa. Đây là dự án học tập và tự làm (DIY), không phải sản phẩm hoàn chỉnh đang bán. Ứng dụng và firmware cần được biên dịch/nạp theo hướng dẫn trong repository.</p></details>
@@ -249,8 +320,8 @@
   </main>
   <footer>
     <div class="container">
-      <div class="footer-row"><a class="brand" href="#dau"><span class="brand-mark">↗</span><span>MOTO<strong>MAP</strong></span></a><nav aria-label="Liên kết cuối trang"><a href="#mo-phong">Mô phỏng</a><a href="#ban-do">Bản đồ</a><a href="#hoi-dap">FAQ</a><a href="https://maler.top/" target="_blank" rel="noopener noreferrer">Glimpse gốc ↗</a><a href="https://github.com/xulytiengviet/motomap" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div>
-      <div class="fineprint">MotoMap – Giao diện tiếng Việt và demo giáo dục. Dựa trên dự án Glimpse của Maler X; dữ liệu trong hình và demo chỉ để minh họa. Quyền tác giả và giấy phép đối với các thành phần kế thừa thuộc về các chủ sở hữu tương ứng; xem LICENSE.md và NOTICE trong repository. Thông số được trích từ bản mẫu Waveshare và tài liệu kỹ thuật của dự án, không phải chứng nhận chất lượng sản phẩm. Khi đi xe, không thao tác trên điện thoại và luôn tuân thủ quy định giao thông. © 2026 MotoMap.</div>
+      <div class="footer-row"><a class="brand" href="#dau"><span class="brand-mark">↗</span><span>MOTO<strong>MAP</strong></span></a><nav aria-label="Liên kết cuối trang"><a href="#mo-phong">Mô phỏng</a><a href="#ban-do">Bản đồ</a><a href="#lap-rap">Lắp ráp</a><a href="#hoi-dap">FAQ</a><a href="https://maler.top/" target="_blank" rel="noopener noreferrer">Glimpse gốc ↗</a><a href="https://github.com/xulytiengviet/motomap" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div>
+      <div class="fineprint">Long Ngo phát triển, Dựa trên dự án Glimpse. © 2026 MotoMap</div>
     </div>
   </footer>
   <script>
@@ -261,7 +332,7 @@
       nav:["Nhìn một lần, biết đường rẽ tiếp theo.","Màn hình hiển thị đường đi gần xe, quãng đường đến chỗ rẽ và tên đường minh họa. Định vị thực tế do ứng dụng điện thoại xử lý.","Dẫn đường"],
       speed:["Tốc độ, rõ ràng trong tầm mắt.","Bố cục chữ lớn giúp xem tốc độ từ dữ liệu điện thoại trong một thao tác. Giá trị 42 km/h trên bản demo là số minh họa.","Tốc độ"],
       heading:["Giữ phương hướng cho mỗi chuyến đi.","Xem hướng đang di chuyển. Khi đứng yên, khả năng xác định Bắc tuyệt đối phụ thuộc cảm biến, hiệu chuẩn và phiên bản phần cứng.","Hướng đi"],
-      music:["Một chạm cho âm nhạc.","Màn hình nhạc mẫu minh họa điều khiển bài hát. Tính tương thích thực tế phụ thuộc hệ điều hành và ứng dụng phát nhạc.","Âm nhạc"]
+      music:["Chẳng Cần Diễm Son — Zing MP3.","Chọn Mở trình phát bên dưới để nghe bài hát qua Zing MP3 (nếu trình duyệt hỗ trợ). Màn hình tròn chỉ là minh họa, không điều khiển bài hát thực tế.","Âm nhạc"]
     };
     var routeSamples=[
       {distance:"250",street:"Rẽ phải · Lê Duẩn"},
@@ -277,16 +348,56 @@
     var routeButtons=[].slice.call(document.querySelectorAll(".phone-route"));
     var demoSource=hero.innerHTML;
     var routeIndex=0;
+    var navTimer=null,navRunning=false,navRemaining=250;
+    var navButton=document.getElementById("navToggle");
+    var navStatus=document.getElementById("navMotionState");
+    var navActions=document.getElementById("navActions");
+    var musicPanel=document.getElementById("musicPanel");
     demo.innerHTML=demoSource;
+    [].slice.call(demo.querySelectorAll("[id]")).forEach(function(el){el.removeAttribute("id");});
     function applyRoute(container){
       var data=routeSamples[routeIndex];
       var distance=container.querySelector(".nav-overlay .distance");
       var street=container.querySelector(".nav-overlay .next");
-      if(distance)distance.innerHTML=data.distance+" <small>m</small>";
+      if(distance)distance.innerHTML=String(navRunning?navRemaining:Number(data.distance))+" <small>m</small>";
       if(street)street.textContent=data.street;
+    }
+    function updateRouteView(){
+      applyRoute(hero);applyRoute(demo);
+      routeButtons.forEach(function(btn){btn.setAttribute("aria-pressed",String(Number(btn.getAttribute("data-route"))===routeIndex));});
+    }
+    function stopNavigation(){
+      if(navTimer!==null){window.clearInterval(navTimer);navTimer=null;}
+      navRunning=false;
+      [hero,demo].forEach(function(el){var layer=el.querySelector('[data-screen="nav"]');if(layer)layer.classList.remove("is-routing");});
+      navButton.textContent="▶ Bắt đầu mô phỏng dẫn đường";
+      navStatus.textContent="Đã dừng chuyển động mô phỏng. Bấm ↱ Dẫn đường hoặc Bắt đầu để chạy lại.";
+    }
+    function startNavigation(){
+      stopNavigation();
+      navRunning=true;
+      navRemaining=Number(routeSamples[routeIndex].distance);
+      [hero,demo].forEach(function(el){var layer=el.querySelector('[data-screen="nav"]');if(layer)layer.classList.add("is-routing");});
+      updateRouteView();
+      navButton.textContent="Ⅱ Tạm dừng mô phỏng";
+      navStatus.textContent="Đang di chuyển trên tuyến minh họa · "+routeSamples[routeIndex].street;
+      if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        navStatus.textContent="Chế độ giảm chuyển động: chỉ cập nhật quãng đường bằng chữ.";
+      }
+      navTimer=window.setInterval(function(){
+        if(!navRunning)return;
+        navRemaining=Math.max(0,navRemaining-10);
+        if(navRemaining===0){
+          routeIndex=(routeIndex+1)%routeSamples.length;
+          navRemaining=Number(routeSamples[routeIndex].distance);
+          navStatus.textContent="Đã qua giao lộ mẫu · Tiếp tục: "+routeSamples[routeIndex].street;
+        }
+        updateRouteView();
+      },550);
     }
     function setMode(mode){
       if(modes.indexOf(mode)===-1)return;
+      if(mode!=="nav" && navRunning)stopNavigation();
       activeMode=mode;
       [hero,demo].forEach(function(el){
         [].slice.call(el.querySelectorAll(".screen-layer")).forEach(function(layer){
@@ -297,15 +408,39 @@
       document.getElementById("modeHeading").textContent=descriptions[mode][0];
       document.getElementById("modeDescription").textContent=descriptions[mode][1];
       demoWrap.setAttribute("aria-label","Màn hình tròn đang hiển thị chế độ "+descriptions[mode][2]);
+      navActions.hidden=mode!=="nav";
+      musicPanel.hidden=mode!=="music";
+    }
+    function chooseMode(mode){
+      setMode(mode);
+      if(mode==="nav")startNavigation();
     }
     modeButtons.forEach(function(btn){
-      btn.addEventListener("click",function(){setMode(btn.getAttribute("data-mode"));});
+      btn.addEventListener("click",function(){chooseMode(btn.getAttribute("data-mode"));});
       btn.addEventListener("keydown",function(e){
         if(e.key!=="ArrowRight" && e.key!=="ArrowLeft")return;
         e.preventDefault();
         var ix=modes.indexOf(activeMode),next=(ix+(e.key==="ArrowRight"?1:3))%modes.length;
-        setMode(modes[next]);modeButtons[next].focus();
+        chooseMode(modes[next]);modeButtons[next].focus();
       });
+    });
+    navButton.addEventListener("click",function(){if(navRunning){stopNavigation();updateRouteView();}else{setMode("nav");startNavigation();}});
+    document.addEventListener("visibilitychange",function(){if(document.hidden && navRunning){stopNavigation();updateRouteView();}});
+    document.getElementById("loadZingPlayer").addEventListener("click",function(){
+      var container=document.getElementById("zingEmbedContainer");
+      if(!container.querySelector("iframe")){
+        var player=document.createElement("iframe");
+        player.title="Trình phát Zing MP3 – Chẳng Cần Diễm Son";
+        player.loading="lazy";
+        player.referrerPolicy="strict-origin-when-cross-origin";
+        player.allow="autoplay; encrypted-media; picture-in-picture";
+        player.setAttribute("allowfullscreen","");
+        player.src="https://zingmp3.vn/embed/song/65A3tmuG8W7c";
+        container.appendChild(player);
+      }
+      container.hidden=false;
+      document.getElementById("musicStatus").textContent="Trình phát đã được mở. Hãy bấm Play trong khung Zing MP3; nếu không tải được, mở liên kết bài hát chính thức.";
+      document.getElementById("loadZingPlayer").textContent="♫ Đã mở trình phát";
     });
     var stepCopy=[
       ["01 · Chờ kết nối Bluetooth (mô phỏng)","Mở nguồn, cấp quyền Bluetooth cho ứng dụng và tìm thiết bị ESP32-S3 trong danh sách."],
@@ -316,11 +451,12 @@
       stepButtons.forEach(function(btn){btn.setAttribute("aria-pressed",String(Number(btn.getAttribute("data-step"))===index));});
       document.getElementById("stepState").textContent=stepCopy[index][0];
       document.getElementById("stepMessage").textContent=stepCopy[index][1];
-      if(index===2)setMode("nav");
+      if(index===2){setMode("nav");startNavigation();}
     }
     stepButtons.forEach(function(btn){btn.addEventListener("click",function(){setStep(Number(btn.getAttribute("data-step")));});});
     routeButtons.forEach(function(btn){
       btn.addEventListener("click",function(){
+        stopNavigation();
         routeIndex=Number(btn.getAttribute("data-route"));
         routeButtons.forEach(function(other){other.setAttribute("aria-pressed",String(other===btn));});
         applyRoute(hero);applyRoute(demo);setStep(1);
@@ -338,7 +474,7 @@
       faqs.forEach(function(el){var match=normalize(el.textContent).indexOf(q)>-1;el.hidden=!match;if(match)shown++;});
       document.getElementById("faqEmpty").classList.toggle("visible",shown===0);
     });
-    applyRoute(hero);applyRoute(demo);setMode("nav");
+    updateRouteView();setMode("nav");
   })();
   </script>
 </body>
